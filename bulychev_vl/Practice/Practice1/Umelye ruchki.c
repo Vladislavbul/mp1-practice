@@ -4,28 +4,27 @@ void main()
 {
 	float h, w, d; //vysota(h), shirina(w), glubina(d)
 	float pDVP, pDSP, pDerevo; //plotnosti
-	float zad, bok, verkh, niz, dveri, polki; //komplektuyushhie shkafa
+	float zad, bok, verkh, niz, dveri; //komplektuyushhie shkafa
 	float x;
-	double a; //kolichestvo polok
-
-	printf("Vvedite po poryadku vysotu (h), shirinu (w), glubinu(d) \nDannye dolzhny sootvetstvovat' sleduyushhemu: 180 < h < 220; 80 < w < 120; 50 < d < 90 \n");
+	double a, polki; //kolichestvo polok
+	printf("Vvedite po poryadku vysotu (h), shirinu (w), glubinu(d) \nDannye dolzhny sootvetstvovat' sleduyushhemu: \n180 <= h <= 220; \n80 <= w <= 120; \n50 <= d <= 90; \n");
 	scanf("%f %f %f", &h, &w, &d);
 	
 	if ((h < 180) || (220 < h))
 	{
-		printf("Nepravil'nye dannye \n");
+		printf("Nepravil'nye vysota \n");
 		return;
 	}
 
 	if ((w < 80) || (120 < w))
 	{
-		printf("Nepravil'nye dannye \n");
+		printf("Nepravil'nye shirina \n");
 		return;
 	}
 
 	if ((d < 50) || (90 < d))
 	{
-		printf("Nepravil'nye dannye \n");
+		printf("Nepravil'nye glubina \n");
 		return;
 	}
 	
@@ -40,9 +39,9 @@ void main()
 
 	if (x == 1)
 	{
-		pDVP = 0.85;
-		pDSP = 0.65;
-		pDerevo = 0.69;
+		pDVP = 0.85f;
+		pDSP = 0.65f;
+		pDerevo = 0.69f;
 	}
 
 	if (x == 2)
@@ -57,13 +56,13 @@ void main()
 		}
 	}
 	
-	zad = h * w * 0.5/*tolshhina*/ * pDVP;
-	bok = 2 * h * d * 1.5/*tolshhina*/ * pDSP;
-	verkh = w * d * 1.5/*tolshhina*/ * pDSP;
-	niz = w * d * 1.5/*tolshhina*/ * pDSP;
+	zad = h * w * 0.5f/*tolshhina*/ * pDVP;
+	bok = 2 * h * d * 1.5f/*tolshhina*/ * pDSP;
+	verkh = w * d * 1.5f/*tolshhina*/ * pDSP;
+	niz = w * d * 1.5f/*tolshhina*/ * pDSP;
 	dveri = h * w * 1/*tolshhina*/ * pDerevo;
 	a = floor (h / 40); //kolichestvo polok
-	polki = a * d * w * 1/*tolshhina*/ * pDSP; //V zadache net znacheniya tolshhiny polki, beru za 1 cm
+	polki = a * d * w * 1.5f/*tolshhina*/ * pDSP;
 
 	printf("Otvet dan v kilogrammakh \nMassa shkafa = %f", (zad + bok + verkh + niz + dveri + polki)/1000);
 }
