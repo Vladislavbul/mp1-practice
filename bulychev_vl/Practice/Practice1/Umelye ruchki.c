@@ -57,12 +57,12 @@ void main()
     h *= 0.01;
     w *= 0.01;
     d *= 0.01;
-    verkh = (w * d * 0.015) * pDSP; //naklad po verx vsego
-    niz = (w * d * 0.015) * pDSP; //naklad po verx vsego
-    zad = ((h - 0.03) * w * 0.005) * pDVP;
-    bok = 2 * ((h - 0.03) * (d - 0.015) * 0.015) * pDSP;
-    dveri = ((h - 0.03) * w * 0,01) * pDerevo; 
-    polki = (((h - 0.03) / (0.4f + 0.015)) * (d - 0.015) * (w - 0.03) * 0.015) * pDSP;
-    Massa = verkh + niz + zad + bok + dveri + polki;
+    verkh = w * d * 0.015; //naklad po verx vsego
+    niz = w * d * 0.015; //naklad po verx vsego
+    zad = (h - 0.03) * w * 0.005;
+    bok = 2 * (h - 0.03) * (d - 0.015) * 0.015;
+    dveri = (h - 0.03) * w * 0,01; 
+    polki = ((h - 0.03) / (0.4 + 0.015)) * (d - 0.015) * (w - 0.03) * 0.015;
+    Massa = verkh * pDSP + niz * pDSP + zad * pDVP + bok * pDSP + dveri * pDerevo + polki * pDSP;
     printf("Massa shkafa %lf\n", Massa);
 }
