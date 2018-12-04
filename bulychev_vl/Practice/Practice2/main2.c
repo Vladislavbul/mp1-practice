@@ -17,7 +17,7 @@ void main()
         scanf("%d", &Nomer);
     }
     while ((Nomer <= 0) || (Nomer > 10));
-	printf("Programma zagadyvaet %d - znachnoe chislo.\n", Nomer);
+    printf("Programma zagadyvaet %d - znachnoe chislo.\n", Nomer);
     i = Nomer - 1;
     k = 9.0 / RAND_MAX * rand() + 1;
     A[0] = k;
@@ -37,24 +37,24 @@ void main()
 
     do 
     {
-		printf("\nCHislo = ");
+        printf("\nCHislo = ");
         scanf("%d", &CHislo);
-		Bull = 0;
-		Cow = 0;
-		k = 0;
-		Proverka = 0;
-		Pr1 = CHislo;
+        Bull = 0;
+        Cow = 0;
+        k = 0;
+        Proverka = 0;
+        Pr1 = CHislo;
 
-		while (Pr1 > 0)
-		{
-			Pr1 = Pr1 / 10;
-			Proverka++;
-		}
-		if (Proverka != Nomer)
-		{
-			printf("!!! V vvedennom chisle dolzhno byt' %d cifr !!!  ", Nomer);
-			continue;
-		}
+        while (Pr1 > 0)
+        {
+            Pr1 = Pr1 / 10;
+            Proverka++;
+        }
+        if (Proverka != Nomer)
+        {
+            printf("!!! V vvedennom chisle dolzhno byt' %d cifr !!!  ", Nomer);
+            continue;
+        }
 
         do 
         {
