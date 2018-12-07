@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #define N 10 
+
 void main()
 {
     int Bull = 0, Cow = 0, Nomer, k, i, j, CHislo, Pr1, Proverka;
@@ -32,7 +33,7 @@ void main()
             i--;
         } 
     }
- 
+
     printf("\nVvedite chislo dlinnoyu %d tsifry. TSifry v chisle ne dolzhny povtoryat'sya.", Nomer);
 
     do 
