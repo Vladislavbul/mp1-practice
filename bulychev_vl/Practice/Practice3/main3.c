@@ -14,17 +14,17 @@ void main()
     {
     printf("Vyberete versiyu igry (1 ili 0): \n1 - Programma zagadyvaet chislo, a vy ego ugadyvaete. \n0 - Vy zagadyvaete chislo, a programma ego ugadyvaet. \nVersiya - ");
     scanf("%d", &version);
-    if ((version != 1) && (version != 0));
+    while ((version != 1) && (version != 0))
     {
         printf("Nepravil'nyj vybor versii.");
-    }    
+        break;
+    }
 
     if (version == 1)
     {
         printf("Programma zagadyvaet chislo ot 1 do 1000. \n");
         ZagadanoeChislo = (rand() % 1000) + 1;
     }
-
     while (version == 1) 
     {
         popitki++;
@@ -34,7 +34,6 @@ void main()
             scanf("%d", &Chislo);
         }
         while ((Chislo < 1) || (Chislo > 1000));
-
         if (Chislo < ZagadanoeChislo)
         {
             printf("---Vvodimoe chislo <Menshe> zagadannogo---\n");
