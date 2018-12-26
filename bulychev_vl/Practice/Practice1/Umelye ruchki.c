@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include <math.h>
 
 void main()
 {
     double h, w, d, Massa; //vysota(h), shirina(w), glubina(d)
     double pDVP, pDSP, pDerevo; //plotnosti
     double zad, bok, verkh, niz, dveri, polki; //komplektuyushhie shkafa
-    float x;
+    float x, a;
     printf("Vvedite v sm po poryadku vysotu (h), shirinu (w), glubinu(d) \nDannye dolzhny sootvetstvovat' sleduyushhemu: \n180 <= h <= 220; \n80 <= w <= 120; \n50 <= d <= 90; \n");
     scanf("%lf %lf %lf", &h, &w, &d);
     
@@ -50,8 +51,8 @@ void main()
 
         if ((pDVP <= 0) || (pDSP <= 0) || (pDerevo <= 0))
         {
-        printf("Nepravil'nye dannye \n");
-        return;
+            printf("Nepravil'nye dannye \n");
+            return;
         }
     }
     
@@ -64,8 +65,8 @@ void main()
     niz = w * d * 0.015; //naklad po verx vsego
     zad = (h - 0.03) * w * 0.005;
     bok = 2 * (h - 0.03) * (d - 0.015) * 0.015;
-    dveri = (h - 0.03) * w * 0,01; 
-    polki = ((h - 0.03) / (0.4 + 0.015)) * (d - 0.015) * (w - 0.03) * 0.015;
+    dveri = (h - 0.03) * w * 0,01;
+    polki = (floor (h - 0.03) / (0.4 + 0.015)) * (d - 0.015) * (w - 0.03) * 0.015;
     Massa = verkh * pDSP + niz * pDSP + zad * pDVP + bok * pDSP + dveri * pDerevo + polki * pDSP;
     printf("Massa shkafa %lf\n", Massa);
 }
