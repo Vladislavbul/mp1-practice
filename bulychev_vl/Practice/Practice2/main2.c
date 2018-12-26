@@ -69,19 +69,19 @@ void main()
                 for (j = (i - 1); j >= 0; j--)
                 {
                     if (C[i] == C[j]) 
-                    k++;
+                        k++;
                 }
             }
         } 
-        while (k != 0);
+        while (k);
         for (i = (Nomer - 1); i >= 0; i--)
         {
             for (j = (Nomer - 1); j >= 0; j--)
             {
                 if ((A[i] == C[j]) && (i == j)) 
-                Bull++;
+                    Bull++;
                 if ((A[i] == C[j]) && (j != i)) 
-                Cow++;
+                    Cow++;
             }
         }
         printf("Cow = %d and Bull = %d", Cow, Bull);
